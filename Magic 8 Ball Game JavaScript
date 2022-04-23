@@ -1,0 +1,72 @@
+let positiveAnswers = [
+  "As I see it, yes",
+  "It is certain",
+  "It is decidedly so",
+  "Yes",
+  "Yes, definitely"
+];
+
+let negativeAnswers = [
+  "My reply is no",
+  "My sources say no",
+  "There is no way",
+  "No",
+  "Absolutely not!"
+];
+
+let maybeAnswers = [
+  "Ask again later",
+  "Better to not tell you now",
+  "Cannot predict now",
+  "Concentrate and ask again",
+  "Reply hazy try again"
+];
+
+const NO_QUESTION_WARNING = "You need to ask a question!";
+
+function chooseRandomAnswer(answerType) {
+  var randomIndex = getRandomNumber(0,4)
+  if (answerType == "positive")
+  {
+    // let answerType = positiveAnswers;
+    // var randomIndex1 = getRandomNumber(0,4);
+    // let randomAnswer = positiveAnswers.indexOf(randomIndex1);
+    return positiveAnswers[randomIndex]
+  }
+  else if (answerType == "negative")
+  {
+    // let answerType = negativeAnswers;
+    // var randomIndex2 = getRandomNumber(0,4);
+    // let randomAnswer = negativeAnswers.indexOf(randomIndex2);
+    return negativeAnswers[randomIndex]
+  }
+  else 
+  {
+    // let answerType = maybeAnswers;
+    // var randomIndex3 = getRandomNumber(0,4);
+    // let randomAnswer = maybeAnswers.indexOf(randomIndex3);
+    return maybeAnswers[randomIndex]
+  }
+}
+console.log(chooseRandomAnswer("positive"));
+
+function chooseRandomAnswerType() {
+ randomAnswer = [`positive`, `negative`, `maybe`]
+ random = getRandomNumber(0,2) 
+ return randomAnswer[random]
+}
+
+function onAnswerRequested() {
+ if (!getQuestionText())
+ {
+   supplyAnswer(NO_QUESTION_WARNING)
+   return getQuestionText()
+ }
+  else 
+ {
+  let answer = chooseRandomAnswer(chooseRandomAnswerType())
+   supplyAnswer(answer)
+   return answer
+ }
+}
+
