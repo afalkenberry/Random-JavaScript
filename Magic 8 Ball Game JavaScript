@@ -28,23 +28,14 @@ function chooseRandomAnswer(answerType) {
   var randomIndex = getRandomNumber(0,4)
   if (answerType == "positive")
   {
-    // let answerType = positiveAnswers;
-    // var randomIndex1 = getRandomNumber(0,4);
-    // let randomAnswer = positiveAnswers.indexOf(randomIndex1);
     return positiveAnswers[randomIndex]
   }
   else if (answerType == "negative")
   {
-    // let answerType = negativeAnswers;
-    // var randomIndex2 = getRandomNumber(0,4);
-    // let randomAnswer = negativeAnswers.indexOf(randomIndex2);
     return negativeAnswers[randomIndex]
   }
   else 
   {
-    // let answerType = maybeAnswers;
-    // var randomIndex3 = getRandomNumber(0,4);
-    // let randomAnswer = maybeAnswers.indexOf(randomIndex3);
     return maybeAnswers[randomIndex]
   }
 }
